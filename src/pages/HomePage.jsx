@@ -41,7 +41,7 @@ export default function HomePage() {
             return (
               <Link
                 key={post.$id}
-                to={`/posts/${post.$id}`}
+                to={`/post/${post.$id}`}
                 className="block bg-white rounded-2xl shadow-md p-4 sm:p-6 hover:shadow-lg transition-shadow duration-300"
               >
                 <h3 className="text-xl sm:text-2xl font-semibold mb-2">
@@ -62,7 +62,7 @@ export default function HomePage() {
       {/* Call to Action */}
       <section className="flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <Link
-          to="/write"
+          to="/add-posts"
           className="inline-block bg-black text-white font-semibold py-2 px-6 sm:py-3 sm:px-8 rounded-full hover:bg-opacity-90 transition-opacity duration-200"
         >
           Share Your Thoughts
