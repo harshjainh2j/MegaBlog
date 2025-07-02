@@ -37,6 +37,9 @@ export default function HomePage() {
             const title = post.title || post.data?.title || 'Untitled';
             const excerpt =
               post.excerpt || post.content || post.data?.excerpt || '';
+            const imageUrl = post.featuredImage
+              ? service.getFilePreview(post.featuredImage)
+              : null;
 
             return (
               <Link
@@ -44,12 +47,26 @@ export default function HomePage() {
                 to={`/post/${post.$id}`}
                 className="block bg-white rounded-2xl shadow-md p-4 sm:p-6 hover:shadow-lg transition-shadow duration-300"
               >
-                <h3 className="text-xl sm:text-2xl font-semibold mb-2">
+                {imageUrl && (
+                  <div className="w-full h-40 rounded-xl overflow-hidden mb-4">
+                    <img
+                      src={imageUrl}
+                      alt={title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                )}
+                <h3 className="text-xl sm:text-2xl font-semibold mb-2 text-center">
                   {title}
                 </h3>
-                <p className="text-sm sm:text-base opacity-80 mb-4">
-                  {excerpt.length > 100 ? `${excerpt.substring(0, 100)}...` : excerpt}
-                </p>
+                <div
+                  className="text-sm sm:text-base opacity-80 mb-4"
+                  dangerouslySetInnerHTML={{
+                    __html: excerpt.length > 100
+                      ? `${excerpt.substring(0, 100)}...`
+                      : excerpt
+                  }}
+                ></div>
                 <span className="text-xs sm:text-sm uppercase tracking-wide border-b-2 border-black">
                   Read More
                 </span>

@@ -41,13 +41,13 @@ export default function Footer() {
           <div className="flex-1 flex flex-col md:pl-8">
             <h4 className="font-semibold text-lg mb-2">Connect</h4>
             <div className="flex space-x-4 mb-4">
-              <a href="#" aria-label="Twitter" className="hover:opacity-75">
+              <a  aria-label="Twitter" className="hover:opacity-75">
                 <span className="text-2xl">🐦</span>
               </a>
-              <a href="#" aria-label="Instagram" className="hover:opacity-75">
+              <a aria-label="Instagram" className="hover:opacity-75">
                 <span className="text-2xl">📸</span>
               </a>
-              <a href="#" aria-label="LinkedIn" className="hover:opacity-75">
+              <a  aria-label="LinkedIn" className="hover:opacity-75">
                 <span className="text-2xl">💼</span>
               </a>
             </div>
